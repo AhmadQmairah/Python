@@ -1,5 +1,5 @@
 from datetime import date,timedelta
-
+from math import ceil
 def check_birthday(year,month,day):
     
     users_date=date(year,month,day)
@@ -16,7 +16,7 @@ def calculate_Age(year,month,day):
     year= (date.today()-users_date).days/365.245
     month= (year %1) *12
     day= (month%1) *  30
-    print("you are %d years, %d months and %d days" %(year,month,round(day)))
+    print("you are %d years, %d months and %d days" %(year,month,ceil(day)))
 
 
 
