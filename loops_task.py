@@ -18,13 +18,14 @@ while(Item.lower()!="done"):
     Item=input("""item (enter "done" when finished): """)
     
 
-print ("-"*20+"\nreceipt\n"+"-"*20)
+if(len(Cart["Items"])!=0):
+    print ("-"*20+"\nreceipt\n"+"-"*20)
+    for (i,items) in enumerate(Cart["Items"]):
+        print("{}     {}     {}".format(Cart["Quantity"][i],Cart["Items"][i],Cart["Price"][i]))
+        
+    print ("-"*20)
+    print("Total Price :   {}".format(sum(Cart["Price"])))     
+else:
+    print("The Cart is empty")
 
-
-for (i,items) in enumerate(Cart["Items"]):
-    print("{}     {}     {}".format(Cart["Quantity"][i],Cart["Items"][i],Cart["Price"][i]))
     
-
-
-    
-print ("-"*20)
